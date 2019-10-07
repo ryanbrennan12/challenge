@@ -7,7 +7,7 @@ const http = axios.create({
 
 
 const getAll = (callback) => {
-  console.log('In GETALL')
+  console.log('In GETALL, utils/')
   http.get(url)
   .then((response) => {
 
@@ -24,6 +24,3 @@ module.exports = {
   http
 };
 
-getAll((err, results) => {
-  console.log('I am results', results)
-})
