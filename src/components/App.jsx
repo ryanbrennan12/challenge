@@ -8,26 +8,45 @@ class App extends React.Component {
       secretWord: 'Ryan',
       incorrectLetters: []
     }
+  }
+
+  // componentDidMount() {
+
+  //   console.log('Heyy')
+  //   fetch('/all')
+  //     .then(response => response.json())
+  //     .then((word) => {
+  //       this.setState({
+  //         secretWord: word
+  //       })
+  //     })
+  //     .catch((err) => {
+  //       console.log('We have an error in App.jsx, ', err)
+  //     })
+  //   }
+  componentDidMount() {
+    //GETS REPOS on Load
+    console.log('HELLLLOOOOO')
+    fetch('/all')
+    .then(response => response.json())
+    .then((word) => {
+      console.log(typeof word)
+      this.setState({
+        secretWord: word
+      })
+    })
+    .catch((err) => {
+      console.log('We have an error, ', err)
+    })
 
   }
-  componentDidMount() {
-    fetch('/all')
-      .then(response => response.json())
-      .then((word) => {
-        this.setState({
-          secretWord: word
-        })
-      })
-      .catch((err) => {
-        console.log('We have an error in App.jsx, ', err)
-      })
-    }
+
 
     render() {
       return (
         <div className="App">
           <div>
-            <button onClick={() => this.handleClearAll()}>Clear All</button>
+            {/* <button onClick={() => this.handleClearAll()}>Clear All</button> */}
           </div>
           <h1> {this.state.secretWord} </h1>
         </div>
@@ -35,6 +54,5 @@ class App extends React.Component {
     }
   }
 
+  export default App;
 
-
-export default App;

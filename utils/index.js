@@ -5,12 +5,10 @@ const http = axios.create({
   baseURL: url
 });
 
-
 const getAll = (callback) => {
   console.log('In GETALL, utils/')
   http.get(url)
   .then((response) => {
-
     callback(null, response.data);
   })
   .catch((error) => {
@@ -23,4 +21,5 @@ module.exports = {
   getAll,
   http
 };
+
 
