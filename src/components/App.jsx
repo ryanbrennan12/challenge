@@ -8,14 +8,24 @@ class App extends React.Component {
       secretWord: 'Ryan',
       incorrectLetters: []
     }
-    this.handleClearAll = this.handleClearAll.bind(this);
-  }
 
-  handleClearAll() {
-    this.setState({
-      secretWord: ''
-    })
   }
+  // componentDidMount() {
+  //   //GETS REPOS on Load
+  //   fetch('/all')
+  //   .then(response => response.json())
+  //   .then((word) => {
+  //     console.log(typeof word)
+  //     this.setState({
+  //       secretWord: word
+  //     })
+  //   })
+  //   .catch((err) => {
+  //     console.log('We have an error, ', err)
+  //   })
+
+  // }
+
   render() {
     return(
       <div className="App">

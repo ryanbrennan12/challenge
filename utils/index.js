@@ -5,7 +5,7 @@ const http = axios.create({
   baseURL: url
 });
 
-console.log('HElloooooooo')
+
 const getAll = (callback) => {
   console.log('In GETALL')
   http.get(url)
